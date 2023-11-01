@@ -1,0 +1,20 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Home from '../components/Home.astro';
+import Experiences from '../components/Experiences.astro';
+import Projects from '../components/Projects.astro';
+import Skills from '../components/Skills.astro';
+---
+
+<Layout title="Hector's Portfolio">
+	<div class="m-0 p-0 text-white">
+		<Navbar />
+		<div class="flex flex-col items-center">
+			<Home />
+			<Experiences />
+			<Projects />
+			<Skills />
+		</div>
+	</div>
+</Layout>

@@ -1,0 +1,37 @@
+---
+import ExperienceItem from "./ExperienceItem.astro";
+
+const data = [
+    {
+        "role":"Researcher and Software Developer with a focus on AI, JoyIt",
+        "place":"Lima,Perú",
+        "time":"MAY - OCT 2023",
+        "tasks":[
+            "Research, analyze and evaluate appropriate technologies for project development",
+            "Collaborate closely with HR to understand your business needs and align software solutions",
+            "Maintain communication with the work team to organize and follow up on designated tasks",
+            "Actively learn in order to provide alternative solutions to a problem"
+        ]
+    },
+    {
+        "role":"Industry 5.0 Research Group, UCSP",
+        "place":"Arequipa,Perú",
+        "time":"AGU 2022 - JULY 2023",
+        "tasks":[
+            "Propose and develop projects focused on Deep Learning and VR",
+            "Help each other to solve doubts in the development of the project",
+            "Actively research tools and analyze their documentation in order to resolve bugs",
+            "Actively review research papers in order to analyze them as state of the art within projects"
+        ]
+    }
+]
+---
+
+<section id="Experience" class="h-screen py-16">
+    <h2 class="font-bold text-2xl flex justify-center">EXPERIENCE</h2>
+    {
+        data.map((exp) => (
+            <ExperienceItem role={exp.role} place={exp.place} time={exp.time} tasks={exp.tasks}/>
+        ))
+    }
+</section>

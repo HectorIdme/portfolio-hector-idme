@@ -1,0 +1,34 @@
+---
+interface Props {
+	role: string;
+	place: string;
+	time: string;
+    tasks: Array<string>;
+}
+
+const { role, place, time, tasks } = Astro.props;
+---
+
+<div class="exp mt-10 py-5 flex justify-start hover:bg-white hover:bg-opacity-10">
+    <div class="pr-8 basis-80 text-right font-bold">{time}</div>
+    <div>
+        <div class="font-bold">
+            <div class="name">{role}</div>
+            <div class="name">{place}</div>
+        </div>
+        <ul class="mt-4">
+        {
+            tasks.map((task) => (<li>- {task}</li>))
+        }
+        </ul>
+    </div>
+    
+</div>
+
+<style>
+    .exp:hover{
+        .name{
+            color: #15c89a;
+        }
+    }
+</style>
