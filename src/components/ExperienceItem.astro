@@ -1,34 +1,40 @@
 ---
+import Tag from "./Tag.astro";
+
 interface Props {
 	role: string;
 	place: string;
 	time: string;
+    projects: Array<string>;
     tasks: Array<string>;
+    tools: Array<string>;
 }
 
-const { role, place, time, tasks } = Astro.props;
+const { role, place, time, tasks, tools, projects } = Astro.props;
 ---
 
-<div class="exp mt-10 py-5 flex justify-start hover:bg-white hover:bg-opacity-10">
-    <div class="pr-8 basis-80 text-right font-bold">{time}</div>
-    <div>
-        <div class="font-bold">
-            <div class="name">{role}</div>
-            <div class="name">{place}</div>
+<div class="exp mt-10 py-5 px-8 flex justify-start">
+    <div class="pr-8 text-right font-bold basis-1/3">{time}</div>
+    <div class="basis-2/3">
+        <div>
+            <div class="font-bold">{role}</div>
+            <div class="font-bold">{place}</div>
+            <div class="mt-4">
+                <span class="font-bold">Projects:</span>
+                <ul>
+                {
+                    projects.map((project) => (
+                        <li>- {project}</li>
+                    ))
+                }
+                </ul>
+            </div>
         </div>
-        <ul class="mt-4">
-        {
-            tasks.map((task) => (<li>- {task}</li>))
-        }
-        </ul>
+        <div class="mt-4">
+            <span class="font-bold">Activities:</span>
+            <ul class="mb-5">{ tasks.map((task) => <li>- {task}</li>) }</ul>
+        </div>
+        <Tag tags={tools} />
     </div>
     
 </div>
-
-<style>
-    .exp:hover{
-        .name{
-            color: #15c89a;
-        }
-    }
-</style>

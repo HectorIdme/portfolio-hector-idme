@@ -1,0 +1,15 @@
+---
+interface Props {
+    tags: Array<string>;
+}
+
+const { tags } = Astro.props;
+---
+
+<div class="flex flex-wrap gap-5 text-sm">
+    { 
+        tags.map((tool) => (
+            <span class="bg-sky-700 px-4 rounded">{tool}</span>
+        )) 
+    }
+</div>
