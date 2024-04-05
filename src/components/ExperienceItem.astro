@@ -5,12 +5,11 @@ interface Props {
 	role: string;
 	place: string;
 	time: string;
-    projects: Array<string>;
     tasks: Array<string>;
     tools: Array<string>;
 }
 
-const { role, place, time, tasks, tools, projects } = Astro.props;
+const { role, place, time, tasks, tools} = Astro.props;
 ---
 
 <div class="exp mt-10 py-5 px-8 flex justify-start">
@@ -19,16 +18,6 @@ const { role, place, time, tasks, tools, projects } = Astro.props;
         <div>
             <div class="font-bold">{role}</div>
             <div class="font-bold">{place}</div>
-            <div class="mt-4">
-                <span class="font-bold">Projects:</span>
-                <ul>
-                {
-                    projects.map((project) => (
-                        <li>- {project}</li>
-                    ))
-                }
-                </ul>
-            </div>
         </div>
         <div class="mt-4">
             <span class="font-bold">Activities:</span>
